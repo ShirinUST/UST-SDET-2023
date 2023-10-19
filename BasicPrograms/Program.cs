@@ -23,8 +23,20 @@ using BasicPrograms;
 //calculation.Add(numberOne,numberTwo);
 
 //Electricity electricity=new Electricity();
-Electricity electricity = new(12345,9000,9300,"sheri");
-Console.WriteLine(electricity.CalculateBill());
+//Electricity electricity = new(12345,9000,9300,"sheri");
+//Console.WriteLine(electricity.CalculateBill());
 //Console.WriteLine(electricity.consumerName);
+
+//Employee employee = new(101,"Shirin","IT",10000);
+//Console.WriteLine("Employee Id: {0} \nName : {1} \nDepartment : {2}",employee.EmployeeId,employee.EmployeeName,employee.Department);
+//Console.WriteLine();
+//Console.WriteLine("Salary : "+employee.CalculateSalary());
+
+ArraysEx arraysEx = new ArraysEx();
+//arraysEx.OneDim();
+//arraysEx.TwoDim();
+arraysEx.JaggedArray();
+
+
 
 
