@@ -64,12 +64,38 @@ foreach(Students s in student)
 
 */
 
+//20-10-2023
+//single Inheritance
+/*
 ElectronicsProduct electronicsProduct = new("TV",25000,2,3);
 Console.WriteLine("Product Name:"+electronicsProduct.ProductName);
 Console.WriteLine("Price : "+electronicsProduct.Price);
 Console.WriteLine("Quantity : "+electronicsProduct.Quantity);
 electronicsProduct.DisplayWarrantyPeriod();
 Console.WriteLine(electronicsProduct.ProductValue());
+
+*/
+
+//Multi-level inheritance
+/*
+DigitalProduct digitalProduct = new("Camera", 100000, 2, 5, "png");
+Console.WriteLine("Product Name: "+digitalProduct.ProductName);
+Console.WriteLine("Price : " + digitalProduct.Price);
+Console.WriteLine("Quantity : "+digitalProduct.Quantity);
+Console.WriteLine("Total Value : " + digitalProduct.ProductValue());
+digitalProduct.DisplayWarrantyPeriod();
+digitalProduct.DisplayFileFormat();
+*/
+//Heirarchical inheritance
+
+ElectronicsProduct electronicsProduct = new("TV", 25000, 2, 3);
+DigitalProduct digitalProduct = new("Camera", 100000, 2, 5, "png");
+ClothingProduct clothingProduct = new("T-shirt", 1500, 30, "small");
+Console.WriteLine("Total Value of Electronics Product : "+electronicsProduct.ProductValue());
+Console.WriteLine("Total Value of Clothing Product : " + clothingProduct.ProductValue());
+Console.WriteLine("Total Value of Digital Product : " + digitalProduct.ProductValue());
+
+
 
 
 
