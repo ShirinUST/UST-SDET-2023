@@ -65,9 +65,9 @@ foreach(Students s in student)
 */
 
 ElectronicsProduct electronicsProduct = new("TV",25000,2,3);
-Console.WriteLine(electronicsProduct.ProductName);
-Console.WriteLine(electronicsProduct.Price);
-Console.WriteLine(electronicsProduct.Quantity);
+Console.WriteLine("Product Name:"+electronicsProduct.ProductName);
+Console.WriteLine("Price : "+electronicsProduct.Price);
+Console.WriteLine("Quantity : "+electronicsProduct.Quantity);
 electronicsProduct.DisplayWarrantyPeriod();
 Console.WriteLine(electronicsProduct.ProductValue());
 
