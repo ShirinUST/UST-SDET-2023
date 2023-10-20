@@ -33,6 +33,8 @@ using Assignments;
 
 //Students Class
 
+/*
+
 Students[] student = new Students[]
 {
     new ("Tom","A",new double[]{100,90,80}),
@@ -59,6 +61,15 @@ foreach(Students s in student)
     Console.WriteLine();
 }
 
+
+*/
+
+ElectronicsProduct electronicsProduct = new("TV",25000,2,3);
+Console.WriteLine(electronicsProduct.ProductName);
+Console.WriteLine(electronicsProduct.Price);
+Console.WriteLine(electronicsProduct.Quantity);
+electronicsProduct.DisplayWarrantyPeriod();
+Console.WriteLine(electronicsProduct.ProductValue());
 
 
 
