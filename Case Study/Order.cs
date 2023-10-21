@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Case_Study
 {
-    internal class Order
+    internal class Order:Customer
     {
        
         public string? OrderDate {  get; set; }

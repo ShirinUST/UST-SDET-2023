@@ -6,7 +6,7 @@ Genre[] genres = new Genre[nob];
 Console.WriteLine("*******Online Bookstore**********");
 Console.WriteLine("Menu");
 Console.WriteLine();
-Customer customer = new Customer();
+Order order = new Order();
 int n = 1;
 do
 {
@@ -39,11 +39,11 @@ do
             break;
         case 2:
             Console.WriteLine("Enter Name: ");
-            customer.Name= Console.ReadLine();
+            order.Name= Console.ReadLine();
             Console.WriteLine("Contact: ");
-            customer.Contact = Convert.ToInt32(Console.ReadLine());
+            order.Contact = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Customer Id: ");
-            customer.CustomerId = Convert.ToInt32(Console.ReadLine());
+            order.CustomerId = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Customer added successfully.....");
             break;
         case 3:
@@ -78,9 +78,11 @@ do
                     if (book.Title == nam1)
                     {
                         Console.WriteLine("Enter date: ");
-                        string? date = Console.ReadLine();
+                        order.OrderDate= Console.ReadLine();
+                        order.TotalCost = book.Price;
                         Console.WriteLine("Order Confirmed!!!!");
-                        customer.GetCustomerDetails();
+                        order.GetOrderDetails();
+                        order.GetCustomerDetails();
                         Console.WriteLine("Title : " + book.Title);
                         Console.WriteLine("Author : " + book.Author);
                         Console.WriteLine("IsBN : " + book.Isbn);
