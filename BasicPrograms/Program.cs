@@ -129,6 +129,7 @@ switch(Convert.ToInt32(Console.ReadLine()))
 }
 */
 
+/*
 EV ev = new();
 ev.VehicleNumber = 444;
 ev.Brand = "XX";
@@ -141,5 +142,17 @@ pv.Brand = "XX";
 pv.Model = "AA";
 Console.WriteLine(pv.setTypeForVeh());
 
+*/
+
+//21-10-2023
+
+//IDoctor doctor = new Doctor();
+Doctor doc= new Doctor();
+doc.AddNewDoctor(111,"shirin");
+doc.DisplayDoctor();
+doc.ModifyDoctor(122,"Jachithra");
+doc.DisplayDoctor();
+doc.BookAppointment(111, "Tom");
+doc.DeleteAppointment("Tom");
 
 
