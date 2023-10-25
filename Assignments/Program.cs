@@ -96,11 +96,29 @@ Console.WriteLine("Total Value of Clothing Product : " + clothingProduct.Product
 Console.WriteLine("Total Value of Digital Product : " + digitalProduct.ProductValue());
 */
 //25-10-2023
+//1.
+/*
 InsurancePolicy policy = new("Life", 123, 1200);
 policy.RenewPolicy();
 policy.RenewPolicy(2000);
 
+*/
+//2.
+CarInsurance car = new();
+car.PolicyName = "Vaahan";
+car.PolicyId = 123;
+car.PremiumAmount = 10000;
+car.Price = 250000;
+Console.WriteLine("Car Insurance\nPolicy Name:{0}\nPolicy Id:{1}\nPremium Amount:{2}\nNew Premium Amount:{3}",car.PolicyName,car.PolicyId,car.PremiumAmount, car.CalculatePremium());
 
+Console.WriteLine();
+
+LifeInsurance life = new();
+life.PolicyName = "Jeevan";
+life.PolicyId = 1001;
+life.PremiumAmount = 100000;
+life.Age = 35;
+Console.WriteLine("Life Insurance\nPolicy Name:{0}\nPolicy Id:{1}\nPremium Amount:{2}\nNew Premium Amount:{3}", life.PolicyName, life.PolicyId, life.PremiumAmount, life.CalculatePremium());
 
 
 
