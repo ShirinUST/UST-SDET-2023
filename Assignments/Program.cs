@@ -101,7 +101,7 @@ Console.WriteLine("Total Value of Digital Product : " + digitalProduct.ProductVa
 Employee employee = new("Shirin", "Safwana", 24, 999);
 employee.DisplayInfo();
 */
-
+/*
 Circle circle = new Circle();
 circle.Radius = 5;
 circle.Draw();
@@ -110,6 +110,7 @@ Rectangle rectangle = new Rectangle();
 rectangle.Length = 5;
 rectangle.Width = 10;
 rectangle.Draw();
+*/
 
 //25-10-2023
 //1.
@@ -120,7 +121,7 @@ policy.RenewPolicy(2000);
 
 */
 //2.
-/*
+
 CarInsurance car = new();
 car.PolicyName = "Vaahan";
 car.PolicyId = 123;
@@ -136,6 +137,6 @@ life.PolicyId = 1001;
 life.PremiumAmount = 100000;
 life.Age = 35;
 Console.WriteLine("Life Insurance\nPolicy Name:{0}\nPolicy Id:{1}\nPremium Amount:{2}\nNew Premium Amount:{3}", life.PolicyName, life.PolicyId, life.PremiumAmount, life.CalculatePremium());
-*/
+
 
 
