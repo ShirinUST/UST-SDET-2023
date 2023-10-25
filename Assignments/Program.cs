@@ -87,13 +87,18 @@ digitalProduct.DisplayWarrantyPeriod();
 digitalProduct.DisplayFileFormat();
 */
 //Heirarchical inheritance
-
+/*
 ElectronicsProduct electronicsProduct = new("TV", 25000, 2, 3);
 DigitalProduct digitalProduct = new("Camera", 100000, 2, 5, "png");
 ClothingProduct clothingProduct = new("T-shirt", 1500, 30, "small");
 Console.WriteLine("Total Value of Electronics Product : "+electronicsProduct.ProductValue());
 Console.WriteLine("Total Value of Clothing Product : " + clothingProduct.ProductValue());
 Console.WriteLine("Total Value of Digital Product : " + digitalProduct.ProductValue());
+*/
+//25-10-2023
+InsurancePolicy policy = new("Life", 123, 1200);
+policy.RenewPolicy();
+policy.RenewPolicy(2000);
 
 
 

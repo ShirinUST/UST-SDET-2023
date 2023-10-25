@@ -147,12 +147,27 @@ Console.WriteLine(pv.setTypeForVeh());
 //21-10-2023
 
 //IDoctor doctor = new Doctor();
-Doctor doc= new Doctor();
+/*Doctor doc= new Doctor();
 doc.AddNewDoctor(111,"shirin");
 doc.DisplayDoctor();
 doc.ModifyDoctor(122,"Jachithra");
 doc.DisplayDoctor();
 doc.BookAppointment(111, "Tom");
 doc.DeleteAppointment("Tom");
+*/
+
+/*
+NonGeneric nonGeneric = new NonGeneric();
+nonGeneric.ArrayListHandling();
+nonGeneric.StackHandling();
+nonGeneric.QueueHandling();
+nonGeneric.HashHandling();
+*/
+
+Generic generic = new Generic();
+generic.ListHandling();
+generic.StackHandling();
+generic.QueueHandling();
+generic.DictionaryHandling();
 
 
