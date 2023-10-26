@@ -1,6 +1,7 @@
 ﻿//18-10-2023
 
 using Assignments;
+using Assignments.ExceptionMessage;
 
 //Student Class
 
@@ -155,6 +156,7 @@ Customer.GetCustomerDetails(phno);
 Customer.DisplayAllCustomers();
 */
 //2.
+/*
 CallRecord call1 = new(111, 9876543210, 10);
 CallRecord call2 = new(222, 1234567890, 30);
 CallRecord call3 = new(333, 9876543210, 15);
@@ -170,4 +172,49 @@ long ph = Convert.ToInt64(Console.ReadLine());
 CallRecord.DisplayCallHistory(ph);
 CallRecord.DisplayTotalNumberOfCalls();
 
+*/
+//3.
+Patient pat1= new Patient(1,"Anu",23,"Fever");
+//Patient pat2= new Patient(2,"Gokul",24,"Fever");
+//Patient pat3= new Patient(3,"Jachithra",25,"");
+try
+{
+    Patient.AddPatientDetails(pat1);
+}
+catch(AgeException ex)
+{
+    Console.WriteLine(ex.Message);
+}
+catch(NameException nex)
+{
+    Console.WriteLine(nex.Message);
+}
+catch(DiagException dex)
+{ Console.WriteLine(dex.Message);}
+//try
+//{
+//    Patient.AddPatientDetails(pat2);
+//}
+//catch (AgeException ex)
+//{
+//    Console.WriteLine(ex.Message);
+//}
+//catch (NameException nex)
+//{
+//    Console.WriteLine(nex.Message);
+//}
+//catch (DiagException dex)
+//{ Console.WriteLine(dex.Message); }
 
+//try 
+//{ 
+//    Patient.AddPatientDetails(pat3);
+//} 
+//    catch (AgeException ex) { Console.WriteLine(ex.Message); } 
+//    catch (NameException nex) { Console.WriteLine(nex.Message); } 
+//    catch (DiagException dex) { Console.WriteLine(dex.Message);}
+catch(Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+Patient.DisplayPatient();
