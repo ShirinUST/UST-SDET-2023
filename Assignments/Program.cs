@@ -142,6 +142,7 @@ Console.WriteLine("Life Insurance\nPolicy Name:{0}\nPolicy Id:{1}\nPremium Amoun
 
 //26-10-2023
 //1.
+/*
 Customer customer1 = new(101, "Tom", 98765432, 12000);
 Customer customer2 = new(102, "Maya", 7654321, 50000);
 Customer customer3 = new(103, "Anu", 65432123, 25000);
@@ -152,5 +153,21 @@ Console.WriteLine("Enter Phone Number: ");
 int phno=Convert.ToInt32(Console.ReadLine());
 Customer.GetCustomerDetails(phno);
 Customer.DisplayAllCustomers();
+*/
+//2.
+CallRecord call1 = new(111, 9876543210, 10);
+CallRecord call2 = new(222, 1234567890, 30);
+CallRecord call3 = new(333, 9876543210, 15);
+CallRecord call4 = new(444, 9876543210, 6);
+CallRecord call5 = new(555, 1234567890, 8);
+CallRecord.callRecords.Add(call1);
+CallRecord.callRecords.Add(call2);
+CallRecord.callRecords.Add(call3);
+CallRecord.callRecords.Add(call4);
+CallRecord.callRecords.Add(call5);
+Console.WriteLine("Enter Phone Number: ");
+long ph = Convert.ToInt64(Console.ReadLine());
+CallRecord.DisplayCallHistory(ph);
+CallRecord.DisplayTotalNumberOfCalls();
 
 
