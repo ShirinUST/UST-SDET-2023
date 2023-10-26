@@ -121,7 +121,7 @@ policy.RenewPolicy(2000);
 
 */
 //2.
-
+/*
 CarInsurance car = new();
 car.PolicyName = "Vaahan";
 car.PolicyId = 123;
@@ -138,5 +138,19 @@ life.PremiumAmount = 100000;
 life.Age = 35;
 Console.WriteLine("Life Insurance\nPolicy Name:{0}\nPolicy Id:{1}\nPremium Amount:{2}\nNew Premium Amount:{3}", life.PolicyName, life.PolicyId, life.PremiumAmount, life.CalculatePremium());
 
+*/
+
+//26-10-2023
+//1.
+Customer customer1 = new(101, "Tom", 98765432, 12000);
+Customer customer2 = new(102, "Maya", 7654321, 50000);
+Customer customer3 = new(103, "Anu", 65432123, 25000);
+Customer.customers.Add(customer1);
+Customer.customers.Add(customer2);
+Customer.customers.Add(customer3);
+Console.WriteLine("Enter Phone Number: ");
+int phno=Convert.ToInt32(Console.ReadLine());
+Customer.GetCustomerDetails(phno);
+Customer.DisplayAllCustomers();
 
 

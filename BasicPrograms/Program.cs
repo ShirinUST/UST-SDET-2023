@@ -15,6 +15,7 @@ Console.WriteLine(wordThree);
 Console.WriteLine(wordThree.ToUpper());*/
 
 using BasicPrograms;
+using BasicPrograms.ExceptionMessages;
 
 //Calculation calculation = new Calculation();
 //int numberOne, numberTwo;
@@ -163,11 +164,50 @@ nonGeneric.StackHandling();
 nonGeneric.QueueHandling();
 nonGeneric.HashHandling();
 */
-
+/*
 Generic generic = new Generic();
 generic.ListHandling();
 generic.StackHandling();
 generic.QueueHandling();
 generic.DictionaryHandling();
 
+*/
+
+ExceptionHandling exception = new ExceptionHandling(99, 101);
+try
+{
+    exception.NumCheck();
+}
+catch(Num1Exception ex) {
+    Console.WriteLine(ex.Message);
+}
+try
+{
+    exception.NumCheckOne();
+}
+catch(Num2Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+//try
+//{
+//    exception.Divide();
+//}
+//catch (ArithmeticException ex)
+//{
+//    /*Console.WriteLine("Dont give zero for denominator" + ex.Message);
+//    Console.WriteLine(ex.StackTrace);
+//    Console.WriteLine(ex.Source);*/
+
+//    Console.WriteLine(MyExceptions.exmsgList[1]);
+//}
+//catch (IndexOutOfRangeException ex)
+//{
+//    Console.WriteLine(MyExceptions.exmsgList[2]);
+//}
+//catch (Exception ex)
+//{
+//    Console.WriteLine(ex.Message);
+//}
+finally { Console.WriteLine(" Age Done"); }
 
