@@ -221,7 +221,7 @@ catch(DiagException dex)
 }
 Patient.DisplayPatient();
 */
-MedicalRecord mr = new(101, "hg", 50, "Heart Failure",1111,0);
+MedicalRecord mr = new(101, "Anu", 50, "Heart Failure",1111,50000);
 try
 {
     MedicalRecord.AddMedicalRecord(mr);
