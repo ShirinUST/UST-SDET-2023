@@ -245,6 +245,7 @@ MedicalRecord.DisplayMed();
 */
 
 //2.
+/*
 int n = 1;
 
 do
@@ -279,4 +280,45 @@ int ch=Convert.ToInt32(Console.ReadLine());
     }
     Console.WriteLine("Do you want to Continue 1.Continue 0.Exit");
     n=Convert.ToInt32(Console.ReadLine());
+} while (n == 1);
+*/
+
+//3.
+int n = 1;
+
+do
+{
+    Console.WriteLine("********MENU**********");
+    Console.WriteLine("1.Add Patient Details   2.Display History of a Patient  3.Exit");
+    Console.WriteLine("-----------------------------------------------------------");
+    int ch = Convert.ToInt32(Console.ReadLine());
+    switch (ch)
+    {
+        case 1:
+            Console.WriteLine("Enter Record Id:");
+            int recId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Patient Id:");
+            int patId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Description:");
+            string? desc = Console.ReadLine();
+            Console.WriteLine("Enter Date:");
+            string? date = Console.ReadLine();
+            MedicalHistory med=new(recId,patId,desc,date);
+            MedicalHistory.AddHistoryToList(med);
+            MedicalHistory.AddHistoryToFile(med);
+            break;
+        case 2:
+            Console.WriteLine("Enter patient Id to Search: ");
+            int id=Convert.ToInt32(Console.ReadLine());
+            MedicalHistory.DisplayPatient(id);
+            break;
+        case 3:
+            Environment.Exit(0);
+            break;
+        default:
+            Console.WriteLine("Invalid Entry");
+            break;
+    }
+    Console.WriteLine("Do you want to Continue 1.Continue 0.Exit");
+    n = Convert.ToInt32(Console.ReadLine());
 } while (n == 1);
