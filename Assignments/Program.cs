@@ -221,6 +221,9 @@ catch(DiagException dex)
 }
 Patient.DisplayPatient();
 */
+//27-10-2023
+//1.
+/*
 MedicalRecord mr = new(101, "Anu", 50, "Heart Failure",1111,50000);
 try
 {
@@ -239,3 +242,41 @@ catch(Exception ex)
     Console.WriteLine(ex.Message);
 }
 MedicalRecord.DisplayMed();
+*/
+
+//2.
+int n = 1;
+
+do
+{
+    Console.WriteLine("********MENU**********");
+Console.WriteLine("1.Add Patient Details   2.Display Patient Details  3.Exit");
+Console.WriteLine("-----------------------------------------------------------");
+int ch=Convert.ToInt32(Console.ReadLine());
+    switch(ch){
+        case 1:
+            Console.WriteLine("Enter Patient Id:");
+            int patId=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Patient Name:");
+            string? name=Console.ReadLine();
+            Console.WriteLine("Enter Age:");
+            int age=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Diagnosis:");
+            string? diag=Console.ReadLine();
+            Patient pat=new(patId, name, age, diag);
+            Patient.AddPatientDetails(pat);
+            break;
+        case 2:
+            Console.WriteLine("Patient Details are....");
+            Patient.DisplayPatient();
+            break;
+        case 3:
+            Environment.Exit(0);
+            break;
+        default:
+            Console.WriteLine("Invalid Entry");
+            break;
+    }
+    Console.WriteLine("Do you want to Continue 1.Continue 0.Exit");
+    n=Convert.ToInt32(Console.ReadLine());
+} while (n == 1);
