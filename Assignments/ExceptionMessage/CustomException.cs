@@ -12,7 +12,8 @@ namespace Assignments.ExceptionMessage
         {
             {"Age","Age Must be between 0 and 120" },
             {"Name","Name cannot be null or empty" },
-            {"Diag","Diagnosis cannot be null or empty"}
+            {"Diag","Diagnosis cannot be null or empty"},
+            {"Cost","Treatment cost must be positive value" }
         };
     }
 }

@@ -26,4 +26,18 @@ namespace Assignments.ExceptionMessage
         {
         }
     }
+
+    internal class InvalidPatientDataException : Exception
+    {
+        public InvalidPatientDataException(string message) : base(message)
+        {
+        }
+    }
+    internal class InvalidMedicalRecordException : Exception
+    {
+        public InvalidMedicalRecordException(string message) : base(message)
+        {
+        }
+    }
+
 }

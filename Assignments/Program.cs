@@ -174,9 +174,10 @@ CallRecord.DisplayTotalNumberOfCalls();
 
 */
 //3.
-Patient pat1= new Patient(1,"Anu",23,"Fever");
+//Patient pat1= new Patient(1,"Anu",23,"Fever");
 //Patient pat2= new Patient(2,"Gokul",24,"Fever");
 //Patient pat3= new Patient(3,"Jachithra",25,"");
+/*
 try
 {
     Patient.AddPatientDetails(pat1);
@@ -191,6 +192,7 @@ catch(NameException nex)
 }
 catch(DiagException dex)
 { Console.WriteLine(dex.Message);}
+*/
 //try
 //{
 //    Patient.AddPatientDetails(pat2);
@@ -213,8 +215,27 @@ catch(DiagException dex)
 //    catch (AgeException ex) { Console.WriteLine(ex.Message); } 
 //    catch (NameException nex) { Console.WriteLine(nex.Message); } 
 //    catch (DiagException dex) { Console.WriteLine(dex.Message);}
-catch(Exception ex)
+/*catch(Exception ex)
 {
     Console.WriteLine(ex.Message);
 }
 Patient.DisplayPatient();
+*/
+MedicalRecord mr = new(101, "hg", 50, "Heart Failure",1111,0);
+try
+{
+    MedicalRecord.AddMedicalRecord(mr);
+}
+catch(InvalidPatientDataException ipdx)
+{
+    Console.WriteLine(ipdx.Message);
+}
+catch (InvalidMedicalRecordException imrx)
+{
+    Console.WriteLine(imrx.Message);
+}
+catch(Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+MedicalRecord.DisplayMed();
