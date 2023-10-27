@@ -50,10 +50,10 @@ namespace Assignments
         }
         public static void DisplayPatient()
         {
-            foreach(Patient patient in patients)
-            {
-                Console.WriteLine("Patient Id : {0}  Name : {1}  Age : {2}  Diagnosis : {3}  ",patient.PatientId,patient.Name,patient.Age,patient.Diagnosis);
-            }
+            //foreach(Patient patient in patients)
+            //{
+            //    Console.WriteLine("Patient Id : {0}  Name : {1}  Age : {2}  Diagnosis : {3}  ",patient.PatientId,patient.Name,patient.Age,patient.Diagnosis);
+            //}
             FileStream fs = new FileStream("D:\\C# ClassWork\\Basic Solution\\Sample\\PatientDetails.txt",
                FileMode.Open, FileAccess.Read);
             StreamReader sr=new StreamReader(fs);
