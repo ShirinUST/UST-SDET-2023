@@ -172,7 +172,7 @@ generic.QueueHandling();
 generic.DictionaryHandling();
 
 */
-
+/*
 ExceptionHandling exception = new ExceptionHandling(99, 101);
 try
 {
@@ -188,7 +188,7 @@ try
 catch(Num2Exception ex)
 {
     Console.WriteLine(ex.Message);
-}
+}*/
 //try
 //{
 //    exception.Divide();
@@ -209,5 +209,12 @@ catch(Num2Exception ex)
 //{
 //    Console.WriteLine(ex.Message);
 //}
-finally { Console.WriteLine(" Age Done"); }
+//finally { Console.WriteLine(" Age Done"); }
 
+FileOperations fop = new();
+//fop.CreateFile();
+//fop.WriteFile();    
+//fop.ReadData();
+//fop.CopyMoveFile();
+//fop.DeleteFile();
+fop.FileProperties();
