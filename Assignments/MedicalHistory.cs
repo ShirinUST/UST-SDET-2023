@@ -32,7 +32,7 @@ namespace Assignments
             FileStream fs = new FileStream("D:\\C# ClassWork\\Basic Solution\\Sample\\PatientHistory.txt",
                FileMode.Append, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs);
-            sw.WriteLine("{0} {1} {2} {3}", history.RecordId, history.PatientId,history.Description,history.Date);
+            sw.WriteLine("{0} , {1} ,  {2} ,  {3}", history.RecordId, history.PatientId,history.Description,history.Date);
             sw.Flush();
             sw.Close();
             fs.Close();
@@ -47,7 +47,7 @@ namespace Assignments
             string? line = sr.ReadLine();
             while(line != null)
             {
-                string[] a=line.Split(" ");
+                string[] a=line.Split(",");
                 int n = int.Parse(a[1]);
                 if (n==id)
                 {

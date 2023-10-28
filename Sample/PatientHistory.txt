@@ -1,3 +1,2 @@
-12 14 Shirin 13-10-2023
-123 4321 FeverAndCough 23-09-2023
-16 4321 KidneyFailure 14-09-1023
+1101 , 1234 ,  Fever and Cough ,  23-10-2023
+2 , 1234 ,  Sore throat ,  27-10-1023
