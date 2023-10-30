@@ -284,6 +284,7 @@ int ch=Convert.ToInt32(Console.ReadLine());
 */
 
 //3.
+/*
 int n = 1;
 
 do
@@ -322,3 +323,33 @@ do
     Console.WriteLine("Do you want to Continue 1.Continue 0.Exit");
     n = Convert.ToInt32(Console.ReadLine());
 } while (n == 1);
+*/
+
+//30-10-2023
+//1.
+HotelRoom hotel = new HotelRoom(101, "Single", true);
+RoomReservation<HotelRoom> reservation = new();
+reservation.BookHotel(hotel);
+Console.WriteLine("Hotel booked");
+Console.WriteLine("Details are:");
+string? status;
+foreach(var item in RoomReservation<HotelRoom>.hotel)
+{
+    if (item.IsBooked)
+        status = "Occupied";
+    else 
+        status = "Not Occupied";
+    Console.WriteLine("Room Number:{0} Room Type:{1} Status:{2} ",item.RoomNumber,item.RoomType,status);
+}
+Console.WriteLine("Enter the room number to delete:");
+int rNo = Convert.ToInt32(Console.ReadLine());
+var room= HotelRoom.GetRoom(rNo);
+if (room != null)
+{
+    reservation.CancelHotel(room);
+    Console.WriteLine("Room canceled");
+}
+else
+{
+    Console.WriteLine("Room doesn't exist");
+}
