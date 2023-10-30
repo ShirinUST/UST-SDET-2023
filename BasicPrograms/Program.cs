@@ -211,10 +211,22 @@ catch(Num2Exception ex)
 //}
 //finally { Console.WriteLine(" Age Done"); }
 
-FileOperations fop = new();
+//FileOperations fop = new();
 //fop.CreateFile();
 //fop.WriteFile();    
 //fop.ReadData();
 //fop.CopyMoveFile();
 //fop.DeleteFile();
-fop.FileProperties();
+//fop.FileProperties();
+
+//GenericEx<int> generic = new GenericEx<int>(10,20);
+//Console.WriteLine(generic.Val1+" "+generic.Val2);
+
+//GenericEx<double> generic1 = new GenericEx<double>(10.25, 2.2222222);
+//Console.WriteLine(generic1.Val1 + " " + generic1.Val2);
+
+//GenericEx<string> generic2 = new GenericEx<string>("hi", "shirin");
+//Console.WriteLine(generic2.Val1 + " " + generic2.Val2);
+
+GenericEx<int> genericArray = new GenericEx<int>(new int[3] {1,2,3});
+genericArray.Display();
