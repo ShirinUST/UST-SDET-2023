@@ -116,7 +116,9 @@ do
 */
 try
 {
-
+    Console.WriteLine("********************************");
+    Console.WriteLine("******S-Mart*******");
+    Console.WriteLine("-----------------------------");
     Customer1 customer1 = new Customer1();
     customer1.CustomerID = 1;
     customer1.CustomerName = "Shirin";
@@ -185,7 +187,7 @@ try
                                     Order od = new Order();
                                     od.PPOrderVerification(productId);
                                     customerOne.ordersPP.Add(PhysicalProduct.Products.Find(x => x.ProductId == productId));
-                                    Console.WriteLine("product added to cart");
+                                    Console.WriteLine("Product added to cart");
                                 
                                 
                             }
@@ -196,7 +198,7 @@ try
                                 Order od1 = new Order();
                                 od1.DPOrderVerification(productId);
                                 customerOne.orders.Add(DigitalProduct.Products.Find(x => x.ProductId == productId));
-                                Console.WriteLine("product added to cart");
+                                Console.WriteLine("Product added to cart");
                             
                             
                         }
