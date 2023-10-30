@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Case_Study.CustomException;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,22 @@ namespace Case_Study
         {
             Console.WriteLine("Order Date : "+OrderDate);
             Console.WriteLine("TotalCost : " + TotalCost);
+        }
+        public void PPOrderVerification(int id)
+        {
+            var a=PhysicalProduct.Products.Find(x => x.ProductId == id);
+            if(a.StockQuantity<=0)
+            {
+                throw new OrderException(CustomExceptions.OrderEx["order"]);
+            }
+        }
+        public void DPOrderVerification(int id)
+        {
+            var a = DigitalProduct.Products.Find(x => x.ProductId == id);
+            if (a.StockQuantity <= 0)
+            {
+                throw new OrderException(CustomExceptions.OrderEx["order"]);
+            }
         }
     }
 }

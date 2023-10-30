@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Case_Study.CustomException
 {
-    internal class OrderException
+    internal class OrderException:Exception
     {
+        public OrderException(string message):base(message) 
+        { }
+    }
+    internal class CustomExceptions
+    {
+        public static Dictionary<string, string> OrderEx = new Dictionary<string, string>()
+        {
+            {"order","Out of Stock" }
+        };
     }
 }
