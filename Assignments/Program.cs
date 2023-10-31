@@ -327,6 +327,7 @@ do
 
 //30-10-2023
 //1.
+/*
 HotelRoom hotel = new HotelRoom(101, "Single", true);
 RoomReservation<HotelRoom> reservation = new();
 reservation.BookHotel(hotel);
@@ -352,4 +353,73 @@ if (room != null)
 else
 {
     Console.WriteLine("Room doesn't exist");
+}
+*/
+
+//31-10-2023
+//1.
+class Program
+{
+    public delegate double BonusDelegate(Employees employees);
+    public static void Main(string[] args)
+    {
+        Employees employ = new();
+        Console.WriteLine("Enter Employee Id:");
+        employ.EmployeeId=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter Employee Name");
+        employ.EmployeeName=Console.ReadLine();
+        Console.WriteLine("Enter Performance Rating(1.0 - 5.0):");
+        employ.PerformanceRating=Convert.ToDouble(Console.ReadLine());
+        int n;
+        do
+        {
+            Console.WriteLine("Choose Bonus Calculation Method :");
+            Console.WriteLine("1.Performace Bonus   2.Festival Bonus    3.Account Profit Bonus  4.Total Bonus");
+            Console.WriteLine("Enter Option:");
+            int opt = Convert.ToInt32(Console.ReadLine());
+            double bon;
+            switch (opt)
+            {
+                case 1:
+                    Console.WriteLine("Performance Bonus");
+                    BonusDelegate bonus = employ.PerformanceBonusCalculation;
+                    bon = bonus(employ);
+                    DisplayDetails(employ, bon);
+                    break;
+                case 2:
+                    Console.WriteLine("Festival Bonus");
+                    BonusDelegate bonus1 = employ.FestivalBonusCalculation;
+                    bon = bonus1(employ);
+                    DisplayDetails(employ, bon);
+                    break;
+                case 3:
+                    Console.WriteLine("Account Profit Bonus");
+                    BonusDelegate bonus2 = employ.ProfitBonusCalculation;
+                    bon = bonus2(employ);
+                    DisplayDetails(employ, bon);
+                    break;
+                case 4:
+                    Console.WriteLine("Total Bonus");
+                    BonusDelegate bon1 = employ.PerformanceBonusCalculation;
+                    BonusDelegate bon2 = employ.FestivalBonusCalculation;
+                    BonusDelegate bon3 = employ.ProfitBonusCalculation;
+                    bon = bon1(employ) + bon2(employ) + bon3(employ);
+                    DisplayDetails(employ, bon);
+                    break;
+
+                default:
+                    Console.WriteLine("Choose valid option.....");
+                    break;
+
+            }
+            Console.WriteLine("1.Continue  2.Exit");
+            n=Convert.ToInt32(Console.ReadLine());
+        } while (n == 1);
+        
+    }
+    public static void DisplayDetails(Employees emp, double b)
+    {
+        Console.WriteLine("Id: {0}\nName: {1}\nRating: {2}\nBonus: {3}", emp.EmployeeId, emp.EmployeeName, emp.PerformanceRating, b);
+    }
+
 }

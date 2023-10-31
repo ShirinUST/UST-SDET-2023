@@ -228,5 +228,27 @@ catch(Num2Exception ex)
 //GenericEx<string> generic2 = new GenericEx<string>("hi", "shirin");
 //Console.WriteLine(generic2.Val1 + " " + generic2.Val2);
 
-GenericEx<int> genericArray = new GenericEx<int>(new int[3] {1,2,3});
-genericArray.Display();
+//GenericEx<int> genericArray = new GenericEx<int>(new int[3] {1,2,3});
+//genericArray.Display();
+
+//31-10-2023
+public delegate void NewDelegate();//declarative statement. it will declare outside the main.
+public delegate void DelegateSum(int num1, int num2);
+class Program:DelegatesExample
+{
+    //public static NewDelegate MethodA;
+    public static void Main(string[] args)
+    {
+        DelegatesExample delex = new();
+        NewDelegate newDelegate =delex.MethodA;
+        newDelegate.Invoke();
+        newDelegate();
+        DelegateSum sum = delex.Add;
+        //sum(1, 2);
+        DelegateSum sub=delex.Sub;
+        //sub(10,20);
+        DelegateSum newOp = sum + sub;
+        newOp(10, 20);
+
+    }
+}
