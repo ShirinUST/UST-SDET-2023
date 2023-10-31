@@ -358,6 +358,7 @@ else
 
 //31-10-2023
 //1.
+/*
 class Program
 {
     public delegate double BonusDelegate(Employees employees);
@@ -422,4 +423,36 @@ class Program
         Console.WriteLine("Id: {0}\nName: {1}\nRating: {2}\nBonus: {3}", emp.EmployeeId, emp.EmployeeName, emp.PerformanceRating, b);
     }
 
+}
+
+*/
+
+class Program
+{
+    public delegate string DelegateMessageOne(string message);
+    public delegate string DelegateMessageTwo(string message);
+    public static void Main(string[] args)
+    {
+        HotelEvent hotelEvent = new("Marriage", "12.00:5-11-2023", "Grand Hyatt", 2000);
+        DelegateMessageOne delegateMessageOne = HotelEvent.EventRegistration;
+        if (hotelEvent != null)
+        {
+            Console.WriteLine(delegateMessageOne($"{hotelEvent.EventName} is Successfully Registered the event on {hotelEvent.EventDate} at {hotelEvent.Location}"));
+        }
+        else
+        {
+            Console.WriteLine(delegateMessageOne("Unsuccessfully registered"));
+        }
+        HotelEvent hotelEventone = new("Birthday Celebration", "19:00:12-11-2023", "Mariott",  200);
+
+        DelegateMessageTwo delegateMessageTwo = HotelEvent.EventRegistration;
+        if (hotelEventone != null)
+        {
+            Console.WriteLine(delegateMessageTwo($"{hotelEventone.EventName} is Successfully Registered the event on {hotelEventone.EventDate} at {hotelEventone.Location}"));
+        }
+        else
+        {
+            Console.WriteLine(delegateMessageTwo("Unsuccessfully registered"));
+        }
+    }
 }
