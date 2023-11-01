@@ -484,14 +484,40 @@ TouristDestination.tour.Add(tourism1);
 TouristDestination.tour.Add(tourism2);
 TouristDestination.tour.Add(tourism3);
 TouristDestination.tour.Add(tourism4);
-Console.WriteLine("Enter a rating to search:");
-double rate=Convert.ToDouble(Console.ReadLine());
-TouristDestination.SearchByRating(rate);
-Console.WriteLine("Based On Price:");
-TouristDestination.SortByPrice();
-Console.WriteLine("Enter location to search:");
-string? loc=Console.ReadLine();
-TouristDestination.FiltertByLocation(loc);
+int n;
+do
+{
+    Console.WriteLine("1.Search based on Rating   2.Search based on Price  3.Search based on location  4.Exit");
+    int opt=Convert.ToInt32(Console.ReadLine());
+    switch(opt)
+    {
+        case 1:
+            Console.WriteLine("Enter a rating to search:");
+            double rate = Convert.ToDouble(Console.ReadLine());
+            TouristDestination.SearchByRating(rate);
+            break;
+        case 2:
+            Console.WriteLine("Based On Price:");
+            TouristDestination.SortByPrice();
+            break;
+        case 3:
+            Console.WriteLine("Enter location to search:");
+            string? loc = Console.ReadLine();
+            TouristDestination.FiltertByLocation(loc);
+            break;
+        case 4:
+            Environment.Exit(0);
+            break;
+        default:
+            Console.WriteLine("Invalid Entry");
+            break;
+
+    }
+    Console.WriteLine("1.Continue  2.Exit");
+    n=Convert.ToInt32(Console.ReadLine());
+} while (n == 1);
+
+
 
 
 
