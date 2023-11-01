@@ -427,32 +427,49 @@ class Program
 
 */
 
-class Program
-{
-    public delegate string DelegateMessageOne(string message);
-    public delegate string DelegateMessageTwo(string message);
-    public static void Main(string[] args)
-    {
-        HotelEvent hotelEvent = new("Marriage", "12.00:5-11-2023", "Grand Hyatt", 2000);
-        DelegateMessageOne delegateMessageOne = HotelEvent.EventRegistration;
-        if (hotelEvent != null)
-        {
-            Console.WriteLine(delegateMessageOne($"{hotelEvent.EventName} is Successfully Registered the event on {hotelEvent.EventDate} at {hotelEvent.Location}"));
-        }
-        else
-        {
-            Console.WriteLine(delegateMessageOne("Unsuccessfully registered"));
-        }
-        HotelEvent hotelEventone = new("Birthday Celebration", "19:00:12-11-2023", "Mariott",  200);
+//class Program
+//{
+//    public delegate string DelegateMessageOne(string message);
+//    public delegate string DelegateMessageTwo(string message);
+//    public static void Main(string[] args)
+//    {
+//        HotelEvent hotelEvent = new("Marriage", "12.00:5-11-2023", "Grand Hyatt", 2000);
+//        DelegateMessageOne delegateMessageOne = HotelEvent.EventRegistration;
+//        if (hotelEvent != null)
+//        {
+//            Console.WriteLine(delegateMessageOne($"{hotelEvent.EventName} is Successfully Registered the event on {hotelEvent.EventDate} at {hotelEvent.Location}"));
+//        }
+//        else
+//        {
+//            Console.WriteLine(delegateMessageOne("Unsuccessfully registered"));
+//        }
+//        HotelEvent hotelEventone = new("Birthday Celebration", "19:00:12-11-2023", "Mariott",  200);
 
-        DelegateMessageTwo delegateMessageTwo = HotelEvent.EventRegistration;
-        if (hotelEventone != null)
-        {
-            Console.WriteLine(delegateMessageTwo($"{hotelEventone.EventName} is Successfully Registered the event on {hotelEventone.EventDate} at {hotelEventone.Location}"));
-        }
-        else
-        {
-            Console.WriteLine(delegateMessageTwo("Unsuccessfully registered"));
-        }
-    }
-}
+//        DelegateMessageTwo delegateMessageTwo = HotelEvent.EventRegistration;
+//        if (hotelEventone != null)
+//        {
+//            Console.WriteLine(delegateMessageTwo($"{hotelEventone.EventName} is Successfully Registered the event on {hotelEventone.EventDate} at {hotelEventone.Location}"));
+//        }
+//        else
+//        {
+//            Console.WriteLine(delegateMessageTwo("Unsuccessfully registered"));
+//        }
+//    }
+//}
+
+//1-11-2023
+
+//1.
+TourismDestination tourism = new("Great wall", "China", 3.5);
+TourismDestination tourism1 = new("Taj Mahal", "India", 4);
+TourismDestination tourism2 = new("Seoul", "Korea", 4.5);
+TourismDestination tourism3= new("Athirappilly", "India", 5);
+TourismDestination tourism4= new("Niagra Waterfalls", "USA", 3.5);
+TourismDestination.tour.Add(tourism);
+TourismDestination.tour.Add(tourism1);
+TourismDestination.tour.Add(tourism2);
+TourismDestination.tour.Add(tourism3);
+TourismDestination.tour.Add(tourism4);
+TourismDestination.SortingRating();
+
+
