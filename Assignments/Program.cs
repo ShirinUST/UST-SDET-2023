@@ -460,16 +460,38 @@ class Program
 //1-11-2023
 
 //1.
-TourismDestination tourism = new("Great wall", "China", 3.5);
-TourismDestination tourism1 = new("Taj Mahal", "India", 4);
-TourismDestination tourism2 = new("Seoul", "Korea", 4.5);
-TourismDestination tourism3= new("Athirappilly", "India", 5);
-TourismDestination tourism4= new("Niagra Waterfalls", "USA", 3.5);
-TourismDestination.tour.Add(tourism);
-TourismDestination.tour.Add(tourism1);
-TourismDestination.tour.Add(tourism2);
-TourismDestination.tour.Add(tourism3);
-TourismDestination.tour.Add(tourism4);
-TourismDestination.SortingRating();
+
+//TourismDestination tourism = new("Great wall", "China", 3.5);
+//TourismDestination tourism1 = new("Taj Mahal", "India", 4);
+//TourismDestination tourism2 = new("Seoul", "Korea", 4.5);
+//TourismDestination tourism3= new("Athirappilly", "India", 5);
+//TourismDestination tourism4= new("Niagra Waterfalls", "USA", 3.5);
+//TourismDestination.tour.Add(tourism);
+//TourismDestination.tour.Add(tourism1);
+//TourismDestination.tour.Add(tourism2);
+//TourismDestination.tour.Add(tourism3);
+//TourismDestination.tour.Add(tourism4);
+//TourismDestination.SortingRating();
+
+//2.
+TouristDestination tourism = new("Great wall", "China", 3.5,5000);
+TouristDestination tourism1 = new("Taj Mahal", "India", 4,2000);
+TouristDestination tourism2 = new("Seoul", "Korea", 4.5,10000);
+TouristDestination tourism3= new("Athirappilly", "India", 5,3000);
+TouristDestination tourism4= new("Niagra Waterfalls", "USA", 3.5,15000);
+TouristDestination.tour.Add(tourism);
+TouristDestination.tour.Add(tourism1);
+TouristDestination.tour.Add(tourism2);
+TouristDestination.tour.Add(tourism3);
+TouristDestination.tour.Add(tourism4);
+Console.WriteLine("Enter a rating to search:");
+double rate=Convert.ToDouble(Console.ReadLine());
+TouristDestination.SearchByRating(rate);
+Console.WriteLine("Based On Price:");
+TouristDestination.SortByPrice();
+Console.WriteLine("Enter location to search:");
+string? loc=Console.ReadLine();
+TouristDestination.FiltertByLocation(loc);
+
 
 

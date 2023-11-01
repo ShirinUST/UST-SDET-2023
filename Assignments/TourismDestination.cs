@@ -23,7 +23,7 @@ namespace Assignments
         public static List<TourismDestination> tour=new List<TourismDestination>();
         public static void SortingRating()
         {
-            var destination=tour.OrderByDescending(x => x.Rating).ThenBy(x=>x.Country);
+            var destination = tour.OrderByDescending(x => x.Rating).ThenBy(x=>x.Country);
             foreach(var i in destination)
             {
                 Console.WriteLine(i.Name+" "+i.Country+" "+i.Rating);
