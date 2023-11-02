@@ -626,5 +626,17 @@ do
 
 */
 
+//2-11-2023
+
+//1.
+
+Hotel hotel = new Hotel("Munnar", "India", 3, "Double", 45);
+Hotel hotel1 = new Hotel("Kashmir", "India", 4, "Single", 40);
+Hotel hotel2 = new Hotel("Burj Khalifa", "Dubai", 4.5, "Soute", 10);
+
+await hotel.HotelBookingig(6, hotel);
+await hotel1.HotelBookingig(5, hotel1);
+await hotel2.HotelBookingig(5, hotel2);
+
 
 
