@@ -630,13 +630,31 @@ do
 
 //1.
 
-Hotel hotel = new Hotel("Munnar", "India", 3, "Double", 45);
-Hotel hotel1 = new Hotel("Kashmir", "India", 4, "Single", 40);
-Hotel hotel2 = new Hotel("Burj Khalifa", "Dubai", 4.5, "Soute", 10);
+//Hotel hotel = new Hotel("Munnar", "India", 3, "Double", 45);
+//Hotel hotel1 = new Hotel("Kashmir", "India", 4, "Single", 40);
+//Hotel hotel2 = new Hotel("Burj Khalifa", "Dubai", 4.5, "Soute", 10);
 
-await hotel.HotelBookingig(6, hotel);
-await hotel1.HotelBookingig(5, hotel1);
-await hotel2.HotelBookingig(5, hotel2);
+//await hotel.HotelBookingig(6, hotel);
+//await hotel1.HotelBookingig(5, hotel1);
+//await hotel2.HotelBookingig(5, hotel2);
+
+//2.
+TourPackage package = new TourPackage(1, "Trivandrum", "12-11-2024", 1300);
+TourPackage package1 = new TourPackage(2, "Kochi", "12-10-2024", 1200);
+TourPackage package2 = new TourPackage(3, "Alappuzha", "2-2-2023", 1100);
+
+TourPackage.TourPackages.Add(package1);
+TourPackage.TourPackages.Add(package2);
+TourPackage.TourPackages.Add(package);
+
+
+Thread thread = new Thread(TourPackage.HotelReservation);
+
+Thread thread1 = new Thread(TourPackage.HotelReservation);
+
+thread1.Start();
+thread1.Join();
+thread.Start();
 
 
 
