@@ -663,7 +663,7 @@ thread.Start();
 // 03-11-2023
 
 //1.
-
+/*
 int n;
 do { 
 Console.WriteLine("MENU");
@@ -715,3 +715,20 @@ switch(opt)
 Console.WriteLine("1.Continue    2.Exit");
 n=Convert.ToInt32(Console.ReadLine());
 }while (n == 1) ;
+*/
+
+//2.
+
+FamilyMembers grandparent = new FamilyMembers("Grandparent", 70);
+FamilyMembers parent1 = new FamilyMembers("Parent 1", 40);
+FamilyMembers parent2 = new FamilyMembers("Parent 2", 38);
+FamilyMembers child1 = new FamilyMembers("Child 1", 12);
+FamilyMembers child2 = new FamilyMembers("Child 2", 8);
+
+grandparent.AddChild(parent1);
+grandparent.AddChild(parent2);
+parent1.AddChild(child1);
+parent2.AddChild(child2);
+
+FamilyTree familyTree = new FamilyTree(grandparent);
+familyTree.DisplayFamilyTree();
