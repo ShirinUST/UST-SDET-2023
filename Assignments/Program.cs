@@ -639,6 +639,7 @@ do
 //await hotel2.HotelBookingig(5, hotel2);
 
 //2.
+/*
 TourPackage package = new TourPackage(1, "Trivandrum", "12-11-2024", 1300);
 TourPackage package1 = new TourPackage(2, "Kochi", "12-10-2024", 1200);
 TourPackage package2 = new TourPackage(3, "Alappuzha", "2-2-2023", 1100);
@@ -657,4 +658,60 @@ thread1.Join();
 thread.Start();
 
 
+*/
 
+// 03-11-2023
+
+//1.
+
+int n;
+do { 
+Console.WriteLine("MENU");
+Console.WriteLine("1.Add Task   2.Remove Task   3.Mark Task as Completed.   4.View Tasks   5.Exit");
+Console.WriteLine("-------------------------------------------------------------------------------");
+int opt = Convert.ToInt32(Console.ReadLine());
+switch(opt)
+{
+    case 1:
+        Console.WriteLine("Enter Task Id:");
+        int id= Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter Task Description:");
+        string? desc=Console.ReadLine();
+        //Console.WriteLine("Is it completed:");
+        string? comp = "Not Completed";//Console.ReadLine();
+        TaskItem task=new(id, desc, comp);
+        TaskItem.TodoList.Add(task);
+        Console.WriteLine("Successfully added");
+        break;
+        case 2:
+        Console.WriteLine("Enter Task Id:");
+        int taskId=Convert.ToInt32(Console.ReadLine());
+        TaskItem.RemoveTask(taskId);
+        break;
+        case 3:
+        Console.WriteLine("Is it completed or not:");
+        int tasId=Convert.ToInt32(Console.ReadLine());
+        TaskItem.UpdateTask(tasId);
+        break;
+        case 4:
+        if (TaskItem.TodoList.Count > 0)
+        {
+            Console.WriteLine("Tasks are.... ");
+            TaskItem.DisplayTasks();
+        }
+        else
+        {
+            Console.WriteLine("No tasks available.");
+        }
+        break;
+        case 5:
+        Environment.Exit(0);
+        break;
+    default:
+        Console.WriteLine("Invalid entry");
+        break;
+
+}
+Console.WriteLine("1.Continue    2.Exit");
+n=Convert.ToInt32(Console.ReadLine());
+}while (n == 1) ;
