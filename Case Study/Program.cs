@@ -114,6 +114,8 @@ do
 
 } while (n == 1);
 */
+
+/*
 try
 {
     Console.WriteLine("********************************");
@@ -438,4 +440,132 @@ catch (OrderException oex)
 catch (Exception ex)
 {
     Console.WriteLine(ex.Message);
+}
+
+*/
+class Program
+{
+    public delegate void DelegateOne(int id, string code);
+    public static void Main(string[] args)
+    {
+
+   
+Console.WriteLine("*******BigHit College*********");
+int n;
+do
+{
+    Console.WriteLine("Users");
+    Console.WriteLine("1. Admin   2.  Student  3. Exit ");
+    int optionOne = Convert.ToInt32(Console.ReadLine());
+    switch (optionOne)
+    {
+        case 1:
+            Console.WriteLine("-------Admin Panel-------");
+            int a;
+            do
+            {
+                Console.WriteLine("1. Add Courses    2. View Courses  3. View Students  4. View Enrolled Student Details  5. Exit ");
+                int optAdmin = Convert.ToInt32(Console.ReadLine());
+                switch (optAdmin)
+                {
+                    case 1:
+                        Console.WriteLine("Enter Course Code: ");
+                        string? courseCode = Console.ReadLine();
+                        Console.WriteLine("Enter Title:");
+                        string? title = Console.ReadLine();
+                        Console.WriteLine("Enter Instructor Name:");
+                        string? instruct = Console.ReadLine();
+                        Console.WriteLine("Enter Maximum count of Students:");
+                        int maxCount = Convert.ToInt32(Console.ReadLine());
+                        Course course = new(courseCode, title, instruct, maxCount);
+                        Course.courses.Add(course);
+                        Console.WriteLine("Course Added Successfully........");
+                        break;
+                    case 2:
+                        Course.DisplayCourse();
+                        break;
+                    case 3:
+                        foreach(var student in Student.Students)
+                        {
+                            Console.WriteLine(student.StudentID+"     "+student.Name+"     "+student.Email);
+                        }
+                        break;
+                    case 4:
+                        Console.WriteLine();
+                        break;
+                    case 5:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Entry......");
+                        break;
+
+
+                }
+                Console.WriteLine("1. Continue   2. Exit");
+                a = Convert.ToInt32(Console.ReadLine());
+            } while (a == 1);
+            break;
+        case 2:
+            Console.WriteLine("---------Student Panel----------");
+            int b;
+            do
+            {
+                Console.WriteLine("1. Add Student    2. Enroll Course    3. Cancel Course    4. View my Courses    5. Exit");
+                int optStudent = Convert.ToInt32(Console.ReadLine());
+                switch (optStudent)
+                {
+                    case 1:
+                        Console.WriteLine("Enter Your ID:");
+                        int stdId = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Enter Your Name:");
+                        string? name = Console.ReadLine();
+                        Console.WriteLine("Enter Your Email:");
+                        string? email = Console.ReadLine();
+                        Student student = new(stdId, name, email);
+                        Student.AddStudent(student);
+                        break;
+                        case 2:
+                        Course.DisplayCourse();
+                        Course cours = new Course("1001", "qwerty", "Manu", 10);
+                        DelegateOne delegateRegister = new DelegateOne(cours.RegisterCourse);
+                        Console.WriteLine("Enter Your ID:");
+                        int id=Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Enter the Course Code You want to Enroll:");
+                        string? code = Console.ReadLine();
+                        delegateRegister(id,code);
+                        break;
+                    case 3:
+                        Course cour = new Course("1000","qwerty","Manu",10);
+                        DelegateOne delegateRemove = new DelegateOne(cour.WithdrawCourse);
+                        Console.WriteLine("Do you really want to Cancel the course:");
+                        Console.WriteLine("then enter Course Code ");
+                        string? cCode=Console.ReadLine();
+                        Console.WriteLine("Enter Your Id:");
+                        int sId=Convert.ToInt32(Console.ReadLine());
+                        delegateRemove(sId, cCode);
+                        break;
+                    case 5:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Invalid entry");
+                        break;
+                }
+                Console.WriteLine("1. Continue   2. Exit");
+                b = Convert.ToInt32(Console.ReadLine());
+            } while(b==1);
+            break;
+        case 3:
+            Environment.Exit(0);
+            break;
+        default:
+            Console.WriteLine("Invalid Entry");
+            break;
+
+    }
+    Console.WriteLine("1. Continue   2. Exit");
+    n=Convert.ToInt32(Console.ReadLine());
+} while (n == 1);
+    }
 }
