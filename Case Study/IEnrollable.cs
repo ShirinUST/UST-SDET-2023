@@ -8,7 +8,7 @@ namespace Case_Study
 {
     internal interface IEnrollable
     {
-        public void RegisterCourse();
-        public void WithdrawCourse();
+        public void RegisterCourse(int id,string code);
+        public void WithdrawCourse(int id,string code);
     }
 }
